@@ -5,77 +5,193 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Md Zahid Hasan — Full-Stack Web Developer</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
+  html { scroll-behavior:smooth; }
   body { background:#0f172a; color:#e2e8f0; line-height:1.6; }
-  .wrap { max-width:900px; margin:0 auto; padding:40px 20px; }
-  header { text-align:center; padding:60px 0 30px; }
-  header h1 { font-size:2.6rem; color:#38bdf8; }
-  header p { font-size:1.15rem; color:#94a3b8; margin-top:8px; }
-  .btn { display:inline-block; margin:18px 6px 0; padding:10px 22px; background:#0284c7; color:#fff; text-decoration:none; border-radius:8px; font-weight:600; }
+  a { color:#38bdf8; }
+  /* Navbar */
+  nav { position:sticky; top:0; z-index:50; background:rgba(15,23,42,.95); border-bottom:1px solid #1e293b; }
+  .nav-in { max-width:1000px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .logo { font-size:1.25rem; font-weight:700; color:#38bdf8; text-decoration:none; }
+  .nav-links { display:flex; flex-wrap:wrap; gap:6px; }
+  .nav-links a { color:#e2e8f0; text-decoration:none; padding:6px 12px; border-radius:6px; font-size:.95rem; }
+  .nav-links a:hover { background:#1e293b; color:#38bdf8; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 20px 40px; }
+  /* Hero */
+  header { text-align:center; padding:56px 0 26px; }
+  header img.photo { width:150px; height:150px; border-radius:50%; border:3px solid #38bdf8; object-fit:cover; background:#1e293b; }
+  header h1 { font-size:2.5rem; color:#f8fafc; margin-top:16px; }
+  header .role { font-size:1.2rem; color:#38bdf8; font-weight:600; }
+  header .intro { color:#94a3b8; max-width:640px; margin:10px auto 0; }
+  .btn { display:inline-block; margin:16px 5px 0; padding:11px 22px; background:#0284c7; color:#fff; text-decoration:none; border-radius:8px; font-weight:600; }
   .btn.alt { background:#1e293b; border:1px solid #38bdf8; color:#38bdf8; }
-  h2 { color:#38bdf8; margin:36px 0 14px; font-size:1.5rem; border-bottom:2px solid #1e293b; padding-bottom:6px; }
-  .skills span { display:inline-block; background:#1e293b; border:1px solid #334155; padding:6px 14px; border-radius:20px; margin:4px; font-size:.95rem; }
-  .card { background:#1e293b; border:1px solid #334155; border-radius:12px; padding:20px; margin:12px 0; }
+  .socials { margin-top:14px; }
+  .socials a { display:inline-block; margin:3px; padding:7px 16px; border:1px solid #334155; border-radius:20px; color:#e2e8f0; text-decoration:none; font-size:.9rem; background:#1e293b; }
+  .socials a:hover { border-color:#38bdf8; color:#38bdf8; }
+  h2 { color:#38bdf8; margin:40px 0 14px; font-size:1.5rem; border-bottom:2px solid #1e293b; padding-bottom:6px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:14px; }
+  .card { background:#1e293b; border:1px solid #334155; border-radius:12px; padding:20px; }
   .card h3 { color:#f8fafc; margin-bottom:6px; }
-  .card a { color:#38bdf8; text-decoration:none; font-weight:600; }
-  footer { text-align:center; color:#64748b; padding:40px 0 10px; font-size:.9rem; }
-  footer a { color:#38bdf8; text-decoration:none; }
+  .card p { color:#cbd5e1; font-size:.95rem; }
+  .card a { font-weight:600; text-decoration:none; }
+  .proj-img { height:130px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:2.6rem; margin-bottom:12px; }
+  .p1 { background:linear-gradient(135deg,#0369a1,#22d3ee); }
+  .p2 { background:linear-gradient(135deg,#7c3aed,#db2777); }
+  .p3 { background:linear-gradient(135deg,#b45309,#f59e0b); }
+  details { background:#0b1220; border:1px solid #334155; border-radius:8px; padding:12px 14px; margin-top:12px; }
+  summary { cursor:pointer; color:#38bdf8; font-weight:600; }
+  details p, details li { font-size:.92rem; color:#cbd5e1; }
+  details ul { margin:6px 0 6px 18px; }
+  .skill-cat h3 { color:#f8fafc; margin-bottom:8px; }
+  .skills span { display:inline-block; background:#0f172a; border:1px solid #334155; padding:6px 14px; border-radius:20px; margin:3px; font-size:.92rem; }
+  footer { text-align:center; color:#64748b; padding:36px 0 8px; font-size:.9rem; }
+  @media (max-width:560px){ header h1{ font-size:1.9rem; } .nav-in{ justify-content:center; } }
 </style>
 </head>
 <body>
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="#home">Zahid Hasan</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
 <div class="wrap">
-  <header>
+
+  <header id="home">
+    <img class="photo" src="https://github.com/zahidhasan25.png" alt="Md Zahid Hasan">
     <h1>Md Zahid Hasan</h1>
-    <p>Full-Stack Web Developer (Trainee) · Social Media Expert · Stock Media Contributor</p>
-    <a class="btn" href="https://github.com/zahidhasan25" target="_blank">GitHub</a>
-    <a class="btn alt" href="https://www.linkedin.com/in/md-zahid-hasan-87b71036b" target="_blank">LinkedIn</a>
-    <a class="btn alt" href="mailto:i.zahid.hasan25@gmail.com">Email Me</a>
+    <div class="role">Full-Stack Web Developer</div>
+    <p class="intro">I build responsive web applications with React, Node.js, Express and MongoDB — and I love turning ideas into clean, working products on the web.</p>
+    <a class="btn" href="resume.pdf" download>⬇ Download Resume</a>
+    <a class="btn alt" href="#projects">See My Projects</a>
+    <div class="socials">
+      <a href="https://github.com/zahidhasan25" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/md-zahid-hasan-87b71036b" target="_blank">LinkedIn</a>
+      <a href="https://www.facebook.com/3DCartoonMela" target="_blank">Facebook</a>
+      <a href="https://www.fiverr.com/zahidhasan546" target="_blank">Fiverr</a>
+    </div>
   </header>
 
-  <h2>About Me</h2>
-  <p>CSE Diploma student at Dinajpur Polytechnic Institute (2023–2027) and Full-Stack Web Development Trainee (Level-1) at Programming Hero. I build responsive web applications with React, Node.js, Express and MongoDB, and I have 3 years of experience growing Facebook Pages, YouTube channels and TikTok accounts organically.</p>
+  <h2 id="about">About Me</h2>
+  <p>My programming journey started with curiosity about how websites work. That curiosity led me to a CSE diploma at Dinajpur Polytechnic Institute and to Programming Hero, where I am training as a full-stack web developer (Level-1). Step by step I have learned HTML, CSS, JavaScript and TypeScript, and now I build full applications with React on the frontend and Node.js, Express and MongoDB on the backend.</p>
+  <p style="margin-top:10px;">The work I enjoy most is building practical products — e-commerce sites, price-comparison tools and clean dashboards — where good design and real usefulness meet. Outside programming, I create 3D cartoon videos for kids on YouTube and TikTok, manage social media pages, and contribute stock media to Adobe Stock and Shutterstock. Content creation keeps my creativity sharp, and programming turns that creativity into products.</p>
 
-  <h2>Skills</h2>
-  <div class="skills">
-    <span>JavaScript</span><span>TypeScript</span><span>React.js</span><span>Node.js</span>
-    <span>Express.js</span><span>MongoDB</span><span>HTML5</span><span>CSS</span>
-    <span>Tailwind CSS</span><span>SQL</span><span>Git &amp; GitHub</span>
-    <span>Graphic Design</span><span>Content Creation</span><span>Social Media Marketing</span>
-  </div>
-
-  <h2>Projects</h2>
-  <div class="card">
-    <h3>Bazar Dor BD</h3>
-    <p>E-commerce price-comparison web app for the Bangladeshi market.</p>
-    <a href="https://bazar-dor-bd-two.vercel.app/" target="_blank">Live Site →</a>
-  </div>
-  <div class="card">
-    <h3>My Shop</h3>
-    <p>Online shop web application with product listings and a clean shopping UI.</p>
-    <a href="https://my-shop-pi-one.vercel.app/" target="_blank">Live Site →</a>
+  <h2 id="skills">Skills</h2>
+  <div class="grid">
+    <div class="card skill-cat">
+      <h3>🎨 Frontend</h3>
+      <div class="skills"><span>HTML5</span><span>CSS</span><span>Tailwind CSS</span><span>JavaScript</span><span>TypeScript</span><span>React.js</span></div>
+    </div>
+    <div class="card skill-cat">
+      <h3>⚙️ Backend</h3>
+      <div class="skills"><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>SQL</span></div>
+    </div>
+    <div class="card skill-cat">
+      <h3>🧰 Tools & Others</h3>
+      <div class="skills"><span>Git</span><span>GitHub</span><span>Microsoft Excel</span><span>Graphic Design</span><span>Content Creation</span><span>Social Media Marketing</span></div>
+    </div>
   </div>
 
-  <h2>Experience</h2>
+  <h2 id="education">Educational Qualification</h2>
   <div class="card">
-    <h3>Social Media Manager — Freelance (Jan 2023 – Present)</h3>
-    <p>Managing and growing Facebook Pages, YouTube channels and TikTok accounts.</p>
-  </div>
-  <div class="card">
-    <h3>Full-Stack Web Development Trainee (Level-1) — Programming Hero (May 2026 – Present)</h3>
-    <p>Hands-on training in modern full-stack web development.</p>
-  </div>
-  <div class="card">
-    <h3>Stock Media Contributor — Freelance (Oct 2025 – Present)</h3>
-    <p>Contributor on Adobe Stock, Shutterstock and Vecteezy.</p>
+    <h3>Diploma in Computer Science & Technology (CST)</h3>
+    <p><strong>Dinajpur Polytechnic Institute</strong>, Dinajpur, Bangladesh — 2023 – 2027 (currently studying)</p>
+    <p>Alongside the diploma, I am completing the <strong>Complete Web Development</strong> course at Programming Hero (Full-Stack Web Development Trainee, Level-1), focused on the MERN stack and real-world projects.</p>
   </div>
 
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:i.zahid.hasan25@gmail.com" style="color:#38bdf8;">i.zahid.hasan25@gmail.com</a><br>
-  LinkedIn: <a href="https://www.linkedin.com/in/md-zahid-hasan-87b71036b">linkedin.com/in/md-zahid-hasan-87b71036b</a><br>
-  GitHub: <a href="https://github.com/zahidhasan25">github.com/zahidhasan25</a><br>
-  Fiverr: <a href="https://www.fiverr.com/zahidhasan546">fiverr.com/zahidhasan546</a></p>
+  <h2 id="experience">Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Full-Stack Web Development Trainee (Level-1)</h3>
+      <p><strong>Programming Hero</strong> · May 2026 – Present</p>
+      <p>Hands-on training in modern full-stack web development with real projects and assignments.</p>
+    </div>
+    <div class="card">
+      <h3>Social Media Manager — Freelance</h3>
+      <p><strong>Freelance</strong> · Jan 2023 – Present</p>
+      <p>3 years of growing Facebook Pages, YouTube channels and TikTok accounts with organic content.</p>
+    </div>
+    <div class="card">
+      <h3>Stock Media Contributor — Freelance</h3>
+      <p><strong>Adobe Stock · Shutterstock · Vecteezy</strong> · Oct 2025 – Present</p>
+      <p>Designing and uploading vector icon sets and stock media for global marketplaces.</p>
+    </div>
+  </div>
 
-  <footer>© 2026 Md Zahid Hasan · Parbatipur, Dinajpur, Bangladesh</footer>
+  <h2 id="projects">Projects</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="proj-img p1">🛒</div>
+      <h3>Bazar Dor BD</h3>
+      <p>An e-commerce price-comparison web app that helps shoppers in Bangladesh compare product prices and find the best deal.</p>
+      <details>
+        <summary>View More / Details</summary>
+        <p style="margin-top:8px;"><strong>Description:</strong> Bazar Dor BD collects products in one clean interface so users can compare prices quickly before buying. Built as a Programming Hero assignment project.</p>
+        <ul>
+          <li><strong>Live Project:</strong> <a href="https://bazar-dor-bd-two.vercel.app/" target="_blank">bazar-dor-bd-two.vercel.app</a></li>
+          <li><strong>GitHub (Client):</strong> <a href="https://github.com/zahidhasan25/bazar-dor" target="_blank">github.com/zahidhasan25/bazar-dor</a></li>
+        </ul>
+        <p><strong>Challenges faced:</strong> Organising product data so comparison stays fast and readable, and making the layout work well on small mobile screens.</p>
+        <p><strong>Future plans:</strong> Add search and category filters, more stores, and a price-drop alert feature.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <div class="proj-img p2">🏪</div>
+      <h3>My Shop</h3>
+      <p>A clean online shop web application with product listings and a smooth, simple shopping experience.</p>
+      <details>
+        <summary>View More / Details</summary>
+        <p style="margin-top:8px;"><strong>Description:</strong> My Shop is a small e-commerce front-end where visitors can browse products in a tidy grid and view product details — designed to practise real-world shop UI patterns.</p>
+        <ul>
+          <li><strong>Live Project:</strong> <a href="https://my-shop-pi-one.vercel.app/" target="_blank">my-shop-pi-one.vercel.app</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/zahidhasan25" target="_blank">github.com/zahidhasan25</a></li>
+        </ul>
+        <p><strong>Challenges faced:</strong> Keeping the product cards consistent with different image sizes, and building a layout that stays clean on both desktop and mobile.</p>
+        <p><strong>Future plans:</strong> Add a working cart, checkout flow and product search.</p>
+      </details>
+    </div>
+
+    <div class="card">
+      <div class="proj-img p3">🎬</div>
+      <h3>Melody Tots TV — Kids Cartoon Channel</h3>
+      <p>A 3D cartoon video project for kids: animal friends Lulu & Coco solve problems together in story videos and live streams.</p>
+      <details>
+        <summary>View More / Details</summary>
+        <p style="margin-top:8px;"><strong>Description:</strong> A complete AI-assisted video production pipeline — story writing, character dialogue voices, 1080p60 rendering and multi-platform live streaming on YouTube and Facebook.</p>
+        <ul>
+          <li><strong>Watch:</strong> <a href="https://youtu.be/1gQ4ze9ux0A" target="_blank">Lulu & Coco on YouTube</a></li>
+          <li><strong>Facebook Page:</strong> <a href="https://www.facebook.com/3DCartoonMela" target="_blank">3D Cartoon Mela</a></li>
+        </ul>
+        <p><strong>Challenges faced:</strong> Keeping characters consistent across scenes, syncing dialogue voices with animation, and running a stable dual-platform live loop.</p>
+        <p><strong>Future plans:</strong> Longer story episodes, more characters, and a regular publishing schedule.</p>
+      </details>
+    </div>
+
+  </div>
+
+  <h2 id="contact">Contact Information</h2>
+  <div class="card">
+    <p>📧 Email: <a href="mailto:i.zahid.hasan25@gmail.com">i.zahid.hasan25@gmail.com</a></p>
+    <p>📱 Phone / WhatsApp: <a href="https://wa.me/8801810347725" target="_blank">+880 1810347725</a></p>
+    <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/md-zahid-hasan-87b71036b" target="_blank">linkedin.com/in/md-zahid-hasan-87b71036b</a></p>
+    <p>🐙 GitHub: <a href="https://github.com/zahidhasan25" target="_blank">github.com/zahidhasan25</a></p>
+    <p style="margin-top:8px;">Open to remote freelance work — web development, AI video creation and social media management. Feel free to reach out any time!</p>
+  </div>
+
+  <footer>© 2026 Md Zahid Hasan · Parbatipur, Dinajpur, Bangladesh · Built with HTML & CSS</footer>
+
 </div>
 </body>
 </html>
